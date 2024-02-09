@@ -1,33 +1,36 @@
 # -*- coding: utf-8 -*-
-""" 
-control_nx3_with_day_program.py
 
-An simple way to control the charge and discharge of the batteries of the next 3 in function of the time of the day using modbus
-A programm for each hours of the day is given in columns of a csv and is applied by this script.
+# control_nx3_with_day_program.py
+#
+# An simple way to control the charge and discharge of the batteries of the next 3 in function of the time of the day using modbus
+# A programm for each hours of the day is given in columns of a csv and is applied by this script.
+#
+# An typical application is the dynamic tarif: in order to inject solar power in the grid in the morning when energy is expensive, 
+# the charge current to the battery (DC) is reduced close to zero and automatically the solar power available goes to the grid.
+# The charge current is then increased to allow the recharge during the afternoon when the solar energy is paid less.
+#
+# If you play only with charge an discharge current, the battery will never be charged or discharged from the grid. The stategy is always to use it for autarky.
+#
+# If you want to charge the battery from the grid or discharge it in the grid, use the delta power on AC source. 
+# Its default value is 0W and with that value, the next always try to minimize the grid power: solar goes first to load or battery, load is covered first by solar or battery
+# The delta P is a direct power setpoint on the AC-source connection, but all other constraints are respected: max charge/discharging current, SOC for backup, max amps on AC-source ,...
+#
+# 
+#
+# notes: 
+# -The manual charge limits must be activated! 
+# -and of course the modbus TCP, the IP adress can be seen on the nx-interface screen
+# -charge and discharge limits: let a little current in case of the control is lost, just in case of
+# -delta power: is for each phase! so if you set 2000W there will be 6kW taken from the grid 
+# -...the csv can be changed manually or could be overwriten every day by another script that get the prices and choose the best time to charge or discharge.
+#
+# to transmit the cvs file by ssh to the pi that run it all day: use pscp 
+#
+# 	pscp C:\Users\moix_\Dropbox\TCC_epfl\nxcontrol\day_control_setpoints.csv pi@raspberrypi.local:Documents/nxcontrol/
+#   pscp C:\Users\moix_\Dropbox\TCC_epfl\nxcontrol\control_nx3_with_day_program.py pi@raspberrypi.local:Documents/nxcontrol/
+# Created on Fri Feb  2 21:58:29 2024
+# @author: moix_po
 
-An typical application is the dynamic tarif: in order to inject solar power in the grid in the morning when energy is expensive, 
-the charge current to the battery (DC) is reduced close to zero and automatically the solar power available goes to the grid.
-The charge current is then increased to allow the recharge during the afternoon when the solar energy is paid less.
-
-If you play only with charge an discharge current, the battery will never be charged or discharged from the grid. The stategy is always to use it for autarky.
-
-If you want to charge the battery from the grid or discharge it in the grid, use the delta power on AC source. 
-Its default value is 0W and with that value, the next always try to minimize the grid power: solar goes first to load or battery, load is covered first by solar or battery
-The delta P is a direct power setpoint on the AC-source connection, but all other constraints are respected: max charge/discharging current, SOC for backup, max amps on AC-source ,...
-
- 
-
-notes: 
--The manual charge limits must be activated! 
--and of course the modbus TCP, the IP adress can be seen on the nx-interface screen
--charge and discharge limits: let a little current in case of the control is lost, just in case of
--delta power: is for each phase! so if you set 2000W there will be 6kW taken from the grid 
--...the csv can be changed manually or could be overwriten every day by another script that get the prices and choose the best time to charge or discharge.
-
-
-Created on Fri Feb  2 21:58:29 2024
-@author: moix_po
-"""
 
 #import pandas as pd
 
