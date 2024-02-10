@@ -54,9 +54,11 @@ SERVER_HOST = "192.168.1.115"           #at home     # set address of nx-interfa
 #######
 #The file source for the profile
 FILENAME="day_control_setpoints.csv"  #keep the format of the original file with 4 colums, comma at the end!
-
-
-
+#the full path is better to call the script from various places, to locate correctly the csv:
+dir_path = os.path.dirname(os.path.realpath(__file__))
+full_file_location = os.path.join(dir_path, FILENAME) # separator not the same on linux and window ! that doesnt work: dir_path +"\\" +FILENAME
+print("The csv:  ",full_file_location , "\n"  )
+#error_here
 ############################
 #initialisation of modbus tcp
 ADDRESS_OFFSET = 0                                      # the modbus address offset as set inside the Next system
@@ -70,9 +72,9 @@ last_set_point_sent = -1 #time it was sent in hour of the day, init at -1, then 
 #######
 #Functions
 
-def read_control_file(FILENAME):
+def read_control_file(filename):
     #a reader that don't use pandas csv reader but the simple file open function:
-    file = open(FILENAME)
+    file = open(filename)
     content = file.readlines() #with readlines I have an array of all lines available
     file.close() 
 
@@ -123,7 +125,7 @@ while True:
 
             #***************************************
             #Read the file with own function: 
-            [max_charge_power_profile, max_discharge_power_profile, ac_source_delta_profile]=read_control_file(FILENAME)
+            [max_charge_power_profile, max_discharge_power_profile, ac_source_delta_profile]=read_control_file(full_file_location)
                 
 
             #TODO: check it is the good day, limits of values, ...
