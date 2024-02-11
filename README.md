@@ -1,5 +1,5 @@
 
-#Control of next3 with MODBUS 
+# Control of next3 with MODBUS 
 
 The next3 is an solar+battery hybrid inverter of Studer-Innotec. It provides solar electricity ON and OFF-grid and allows for a kind of energy autonomy or autarky.
 There are monitoring tools supplied freely by the Studer-Innotec company (web portal, APP). There are also open possibilities with MODBUS communication and API to the monitoring, that's where it starts to be interesting...
@@ -12,7 +12,7 @@ In this repository:
 
 
 
-##Studer lib for Modbus
+## Studer lib for Modbus
 
 For the use of modbus TCP (or RTU), a library is ready: nxmodbus with source code available on https://github.com/studer-innotec/next-modbus
 
@@ -27,7 +27,7 @@ The modbus must be activated in TCP mode on the next3. The modbus menu is in the
 https://albedo.ch/wp-content/uploads/2024/02/image.png
  
 
-##Status of nx3 over the local network with python
+## Status of nx3 over the local network with python
 
 The python script MODBUS_TCP_read_of_next3_status.py  displays in the terminal the live value, the production/consumption of yesterday and of the full life of the next3: 
 
@@ -38,7 +38,8 @@ Change the next 3 IP adress at the beggining of the script:
 And prices can be adapted at the beginning of the script for your real costs.
 
 Example of result:
-`###############################
+```terminal
+###############################
 #### LIVE VALUES
 Battery Voltage: 51.99989700317383 Volts
 Battery SOC: 40.0 %
@@ -80,7 +81,7 @@ Total energy bought from the grid: 1061.68 CHF
 Total savings with Autarky: 1110.09 CHF
 TOTAL: 2670.65 CHF
 
-CO2 saved with autarky and grid-feeding 651.65 kg of CO2` 
+CO2 saved with autarky and grid-feeding 651.65 kg of CO2``` 
 
   
 
@@ -88,7 +89,7 @@ This script is available here: https://github.com/moixpo/nxcontrol
 
 
 
-##A day programm to charge and discharge the battery at certain times
+## A day programm to charge and discharge the battery at certain times
 
 
 With the energy transition, the electrical grid of tomorrow will be managed very differently. There will be hours with a lot of solar in excess (even too much) and some other moments where energy is scarce.
@@ -123,12 +124,12 @@ https://albedo.ch/wp-content/uploads/2024/02/image-5.png
 
 
 
-##Automatic use of the script at startup of a Raspberry
+## Automatic use of the script at startup of a Raspberry
 
 
 The goal here is to have a small raspberry zero that cost very little, consumes almost nothing and let it make the control instead of my main computer.
 
-###Start from begining
+### Start from begining
 
 Here are the steps to do to start from beggingin. If everything goes smoothly, it should take less thant 1h, including half an hour to wait for the SD card to be written:
 
