@@ -163,11 +163,12 @@ Here are the steps to do to start from beggining. If everything goes smoothly, i
     - In the editor, write the line:
         - `sudo bash -c '/usr/bin/python3 /home/pi/Documents/nxcontrol/control_nx3_with_day_program.py > /home/pi/blink.log 2>&1' & `
         - don’t forget the &, it took me 30 min to see that little error…
-
-![automatic start](https://albedo.ch/wp-content/uploads/2024/02/image-12.png)
+        
+    ![automatic start](https://albedo.ch/wp-content/uploads/2024/02/image-12.png)
+    - there will be the log of the cmd line in the log file in the same folder as the script
 
 - Restart the raspberry pi and that’s it!
-- there will be the log of the cmd line in the log file in the same folder as the script
+
 
 ## Changing the charging profile for the next day, a few ideas
 
@@ -175,7 +176,7 @@ The raspberry zero is running hidden somewhere in the house… From my desktop c
 
 After a few days of test, I see that the first setpoints profiles were nice for good weather, but for cloudy days another programm should be used. In the example below some power was injected in the grid in the morning but it should better have been charge to the battery because during the afternoon the solar is not sufficient and the battery was not filled:
 
-![bad eather](https://albedo.ch/wp-content/uploads/2024/02/image-6.png)
+![bad weather](https://albedo.ch/wp-content/uploads/2024/02/image-6.png)
 
 
 
