@@ -168,7 +168,7 @@ Here are the steps to do to start from beggining. If everything goes smoothly, i
     - there will be the log of the cmd line in the log file in the same folder as the script
 
 - Restart the raspberry pi and that’s it! put it on a plug behing the sofa and forget it:
-   ![sofa](https://albedo.ch/wp-content/uploads/2024/02/image-13.png)
+   ![sofa](https://albedo.ch/wp-content/uploads/2024/02/image-13-e1707722130440.png)
 
 
 ## Changing the charging profile for the next day, a few ideas
