@@ -167,7 +167,8 @@ Here are the steps to do to start from beggining. If everything goes smoothly, i
     ![automatic start](https://albedo.ch/wp-content/uploads/2024/02/image-12.png)
     - there will be the log of the cmd line in the log file in the same folder as the script
 
-- Restart the raspberry pi and that’s it!
+- Restart the raspberry pi and that’s it! put it on a plug behing the sofa and forget it:
+   ![sofa](https://albedo.ch/wp-content/uploads/2024/02/image-13.png)
 
 
 ## Changing the charging profile for the next day, a few ideas
@@ -180,18 +181,18 @@ After a few days of test, I see that the first setpoints profiles were nice for 
 
 
 
-I simply made two typical days profiles, one for nice weather and one for bad weather and I send with pscp the good one the day before. I
+I simply made two typical days profiles, one for nice weather and one for bad weather and I send with pscp the good one the day before. 
 
 Again, that is not perfect but that makes 80% of the job…
 
 ### Notes:
 
-To set up everything in the PI without dedicated screen/keyboard/mouse: use ssh connection in power shell
+- To set up everything in the PI without dedicated screen/keyboard/mouse: use ssh connection in power shell
 
-Type powershell in the windows search bar, open it and type `ssh pi@raspberry.local` give your password and you are like if you were in the pi terminal… (or with direct IP adress if there are troubles with dns-hostname.
+- Type powershell in the windows search bar, open it and type `ssh pi@raspberry.local` give your password and you are like if you were in the pi terminal… (or with direct IP adress if there are troubles with dns-hostname.
 
-To check it is running:
-    check remotely what processes are running with the command `ps -ef | grep python`
-    the result can also be seen the next day on the studer portal on the battery current chart.
+- To check it is running:
+    - check remotely what processes are running with the command `ps -ef | grep python`
+    - the result can also be seen the next day on the studer portal on the battery current chart.
 
 
