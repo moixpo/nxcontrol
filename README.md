@@ -117,7 +117,7 @@ Principles of the script are:
 
 Here is an example of a day with that control applied: from 7 to 12h the charge current is set down to a 5A DC (~250W, small for the battery size). Just a small value in order not to give 0A:
 
-![result day][ https://albedo.ch/wp-content/uploads/2024/02/image-4.png]
+![result day](https://albedo.ch/wp-content/uploads/2024/02/image-4.png)
 The sent settpoints can be seen on the Studer portal monitoring, on the battery page (but the charging limit displayed is mixed with the setpoint comming from the BMS of the lithium battery, the smallest is taken into account. That is why the charging limit goes down to 0A during the afternoon when the battery has reached 100%):
 
 ![result batt](https://albedo.ch/wp-content/uploads/2024/02/image-5.png)
