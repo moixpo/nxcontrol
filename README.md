@@ -122,6 +122,10 @@ The sent settpoints can be seen on the Studer portal monitoring, on the battery 
 
 ![result batt](https://albedo.ch/wp-content/uploads/2024/02/image-5.png)
 
+Below is another example for the following case: there is a dynamic tarif with a very low price during some hours of the night. At this time the battery was filled, in order to cover the consumption hours of the morning. Then in the morning the recharge is forbiden: the solar power is injected to the grid when it has more values. From 11h the recharged with solar is allowed in order to store energy for the evening.
+
+![night recharge](https://albedo.ch/wp-content/uploads/2024/02/image-15-1536x605.png)
+
 
 
 ## Automatic use of the script at startup of a Raspberry
